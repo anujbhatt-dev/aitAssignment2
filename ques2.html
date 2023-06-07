@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BCCI - T20 Batting Statistics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        canvas {
+            background-color: #ffffff;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>T20 Batting Statistics</h1>
+    <canvas id="chart" width="400" height="300"></canvas>
+
+    <script>
+        var canvas = document.getElementById("chart");
+        var ctx = canvas.getContext("2d");
+
+        var data = [
+            { over: 5, runs: 40 },
+            { over: 10, runs: 75 },
+            { over: 15, runs: 140 },
+            { over: 20, runs: 210 }
+        ];
+
+        var chartWidth = canvas.width - 40;
+        var chartHeight = canvas.height - 40;
+        var margin = 20;
+        var xAxisStart = margin;
+        var xAxisEnd = canvas.width - margin;
+        var yAxisStart = canvas.height - margin;
+        var yAxisEnd = margin;
+
+        var maxRuns = Math.max(...data.map(d => d.runs));
+
+        var xScale = chartWidth / (data[data.length - 1].over - data[0].over);
+        var yScale = chartHeight / maxRuns;
+
+        ctx.beginPath();
+        ctx.moveTo(xAxisStart, yAxisStart);
+        ctx.lineTo(xAxisEnd, yAxisStart);
+        ctx.strokeStyle = "#000000";
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(xAxisStart, yAxisStart);
+        ctx.lineTo(xAxisStart, yAxisEnd);
+        ctx.strokeStyle = "#000000";
+        ctx.stroke();
+
+        ctx.fillStyle = "#000000";
+        ctx.textAlign = "center";
+        ctx.fillText("Over", canvas.width / 2, canvas.height - 5);
+
+        ctx.textAlign = "right";
+        ctx.textBaseline = "middle";
+        for (var i = 0; i <= maxRuns; i += 50) {
+            var y = yAxisStart - i * yScale;
+            ctx.fillText(i, xAxisStart - 5, y);
+        }
+
+        ctx.beginPath();
+        ctx.moveTo(xAxisStart + (data[0].over - data[0].over) * xScale, yAxisStart - data[0].runs * yScale);
+        for (var i = 1; i < data.length; i++) {
+            ctx.lineTo(xAxisStart + (data[i].over - data[0].over) * xScale, yAxisStart - data[i].runs * yScale);
+        }
+        ctx.strokeStyle = "#ff0000";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        ctx.fillStyle = "#ff0000";
+        for (var i = 0; i < data.length; i++) {
+            ctx.beginPath();
+            ctx.arc(xAxisStart + (data[i].over - data[0].over) * xScale, yAxisStart - data[i].runs * yScale, 4, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+    </script>
+</body>
+</html>

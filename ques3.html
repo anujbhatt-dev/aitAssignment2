@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MYCITY - Dehradun</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        #header h1 {
+            font-size: 48px;
+            color: #0000ff;
+        }
+        #content {
+            padding: 20px;
+        }
+        .landmark {
+            margin-bottom: 10px;
+        }
+        .landmark span {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .landmark .name1 {
+            color: #ff0000;
+            font-style: italic;
+            font-family: "Times New Roman", Times, serif;
+        }
+        .landmark .name2 {
+            color: #00ff00;
+            font-style: normal;
+            font-family: Arial, sans-serif;
+        }
+        .landmark .name3 {
+            color: #0000ff;
+            font-style: normal;
+            font-family: Verdana, Geneva, sans-serif;
+        }
+        .landmark .college {
+            color: #ff00ff;
+            font-family: "Courier New", Courier, monospace;
+            animation: scroll 20s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+        #scrolling-text {
+            font-size: 18px;
+            color: #000000;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: scroll-left 20s linear infinite;
+        }
+        @keyframes scroll-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        #footer {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        #footer img {
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>MYCITY - Dehradun</h1>
+    </div>
+    <div id="content">
+        <div class="landmark">
+            <span>Landmark 1:</span> <span class="name1">Indian Military Academy (IMA)</span>
+        </div>
+        <div class="landmark">
+            <span>Landmark 2:</span> <span class="name2">Forest Research Institute</span>
+        </div>
+        <div class="landmark">
+            <marquee id="scrolling-text" behavior="scroll" direction="left"><span>Landmark 3:</span> <span class="name3">Rover's Cave</span></marquee>
+        </div>
+        <marquee id="scrolling-text" behavior="scroll" direction="left"><span>Landmark 4:</span> <span class="name1 college">DR D Y Patil Institute of Management and Research</span></marquee>
+        <div class="landmark">
+            <span>Landmark 5:</span> <span class="name2">Mussoorie</span>
+        </div>
+    </div>
+    <marquee id="scrolling-text" behavior="scroll" direction="left">Come to Dehradun</marquee>
+    <div id="footer">
+        <img src="fri.jpg" alt="City Image">
+    </div>
+</body>
+</html>

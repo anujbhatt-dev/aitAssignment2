@@ -1,0 +1,118 @@
+<!-- Create an html5 page with following specifications
+a. Title should be about MYCOLLEGE
+b. Put the windows logo image in the background
+c. Place your college name at the top of the page in large text followed by address in 
+smaller size
+d. Add names of courses offered each in a different color, style, and typeface
+e. Add scrolling text with message of your choice
+f. Add college image at the bottom (HINT: use appropriate header and footer for the 
+page) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY COLLEGE</title>
+    <style>
+        body{
+            /* height: 100vh; */
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            overflow-x: hidden;
+            background-image: url("./win.avif");
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            background-attachment: fixed;
+        }
+        main{
+            flex-grow: 1;
+        }
+        header{
+            color:brown;
+            background: rgba(52, 133, 245, 0.9) ;
+            padding: 10px ;
+        }
+        .courses{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3em;
+            padding: 5em 10em;
+            
+        }
+        .courses > .card{
+            background: rgba(52, 133, 245, 0.9) ;
+            color: white;
+            min-height: 20em;
+            border-radius: 18px;
+            line-height: 1.5;
+            padding: 10px;
+            outline: 10px solid #000;
+            outline-offset: 10px;
+        }
+        .courses__1{
+            color: orange;
+            font-size: medium;
+            font-style: italic;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .courses__2{
+            color: orangered;
+            font-size: large;
+            font-style: italic;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+        .courses__3{
+            color: tomato;
+            font-size: small;
+            font-style: italic;
+            font-family:'Times New Roman', Times, serif
+        }
+
+        footer{
+            background: black;
+            min-height: 25em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        marquee{
+            font-size: 1em;
+            font-weight: bold;
+            background: #333;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Dr D Y Patil Institute of Management and Technology</h1></header>
+    <main>
+        <h2 class="address">Sant Tukaram Nagar, Pimpri, Pune, Maharashtra 411018</h2>
+        <div class="courses">
+            <div class="card">
+                <h3 class="courses__1">MCA</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit laborum deserunt deleniti error veritatis nobis optio temporibus quas voluptatem reprehenderit, quaerat odit ad eos, dignissimos, ullam dolores reiciendis nihil blanditiis?</p>
+            </div>
+            <div class="card">
+                <h3 class="courses__2">MBA</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam corporis, asperiores in quae laborum fuga atque libero facilis beatae obcaecati. Ut odio sed quo quae ex assumenda temporibus voluptate cumque, voluptatum hic.</p>
+            </div>
+            <div class="card">
+                <h3 class="courses__3">MBA-DM</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam corporis, asperiores in quae laborum fuga atque libero facilis beatae obcaecati. Ut odio sed quo quae ex assumenda temporibus voluptate cumque, voluptatum hic.</p>
+            </div>
+        </div>
+        <marquee>visit our college</marquee>
+    </main>
+    <footer>
+        <img src="./dyp.jpeg" />
+    </footer>
+</body>
+</html>

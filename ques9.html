@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>College Voting System</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    form {
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    button[type="submit"] {
+      background-color: #336699;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #005580;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>DYPIMR College Voting System</h1>
+    <p>Cast your vote for the upcoming college elections.</p>
+    <form action="vote.php" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="roll">Roll Number:</label>
+      <input type="number" id="roll" name="roll" required>
+
+      <label for="candidate">Select Candidate:</label>
+      <select id="candidate" name="candidate" required>
+        <option value="">-- Select --</option>
+        <option value="anuj">anuj</option>
+        <option value="apurva">apurva</option>
+        <option value="adesh">adesh</option>
+      </select>
+
+      <button type="submit">Submit Vote</button>
+    </form>
+  </div>
+</body>
+</html>
